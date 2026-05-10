@@ -1,0 +1,32 @@
+name: Preprocess Dataset
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  run-preprocess:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python 3.12.7
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12.7'
+
+      - name: Install dependencies
+        run: pip install pandas scikit-learn numpy
+
+      - name: Run preprocessing script
+        run: python preprocessing/automate_APC.py
+
+      - name: Commit processed data
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add loan_preprocessing/loan_clean.csv
+          git commit -m "Update preprocessed data" || echo "No changes"
+          git push
