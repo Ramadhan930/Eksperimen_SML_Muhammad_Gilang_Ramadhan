@@ -21,7 +21,7 @@ jobs:
         run: pip install pandas scikit-learn numpy
 
       - name: Run preprocessing script
-        run: python preprocessing/automate_APC.py
+        run: python preprocessing/automate_APC282d6Y0418.py
 
       - name: Commit processed data
         run: |
