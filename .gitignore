@@ -1,0 +1,37 @@
+# Virtual environment
+venv/
+env/
+.venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Distribution / packaging
+*.egg-info/
+dist/
+build/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# File sementara
+*.swp
+*~
+
+# MLflow (nanti setelah kriteria 2)
+mlruns/
+
+# Data hasil preprocessing (opsional, kalau kalian selalu generate ulang)
+# loan_preprocessing/loan_clean.csv
